@@ -73,7 +73,7 @@ for i in range(0,num_of_batches):
   batch_and_test(i*batch_size)
 
 print(f"Average Bleu scores across {batch_size*num_of_batches} examples")
-print(f"Avg Bleu1 Score: {sum(n1_scores)/len(n1_scores)}")
-print(f"Avg Bleu2 Score: {sum(n2_scores)/len(n2_scores)}")
-print(f"Avg Bleu3 Score: {sum(n3_scores)/len(n3_scores)}")
-print(f"Avg Bleu4 Score: {sum(n4_scores)/len(n4_scores)}")
+print(f"Avg Bleu1 Score: {sum(n1_scores)/len(n1_scores)} using {len(n1_scores)} examples")
+print(f"Avg Bleu2 Score: {sum(n2_scores)/len(n2_scores)} using {len(n2_scores)} examples")
+print(f"Avg Bleu3 Score: {sum(n3_scores)/len(n3_scores)} using {len(n3_scores)} examples")
+print(f"Avg Bleu4 Score: {sum(n4_scores)/len(n4_scores)} using {len(n4_scores)} examples")
