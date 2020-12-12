@@ -1,11 +1,11 @@
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import MarianTokenizer, MarianMTModel
 from tqdm import tqdm
-import torch
+from torch import cuda
 
 
 #tr-az translater
-tr_az_tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-tr-az")
-tr_az_model = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-tr-az").to("cuda")
+tr_az_tokenizer = MarianTokenizer.from_pretrained("Helsinki-NLP/opus-mt-tr-az")
+tr_az_model = MarianMTModel.from_pretrained("Helsinki-NLP/opus-mt-tr-az").to("cuda")
 
 #input data
 tr_data_path = "../data/tr-en/tr-en-open-subtitles/OpenSubtitles.tr-en.tr"
@@ -17,7 +17,7 @@ en_data_file = open(en_data_path, "r")
 data_file = tr_data_file
 initial_offset = 300000 #skip the first number of lines
 data_out_size = 200000 #number of output lines
-num_of_batches = 4000 #number of batches
+num_of_batches = 5000 #number of batches
 batch_size = int(data_out_size/num_of_batches) #size of each batch
 print(f"\nNumber of Batches ={num_of_batches}\nBatch size ={batch_size}")
 
@@ -44,7 +44,7 @@ def batch_and_write():
     if src_text[i][0]=="-": #this is a little bit of data cleaning for a common issue in open subtitles
       src_text[i]=src_text[i][2:]
   #batch
-  batch = tr_az_tokenizer.prepare_seq2seq_batch(src_texts=src_text).to('cuda')
+  batch = tr_az_tokenizer.prepare_seq2seq_batch(src_texts=src_text, return_tensors="pt").to('cuda')
   #generate
   gen = tr_az_model.generate(**batch).to('cuda')
   #decode
@@ -58,10 +58,10 @@ def batch_and_write():
   del batch
   del gen
   del words
-  torch.cuda.empty_cache()
+  cuda.empty_cache()
 
 #run our batches
-print("Running translation step")
+print("Translating")
 for i in tqdm(range(num_of_batches)):
   batch_and_write()
   #and also write the en file
