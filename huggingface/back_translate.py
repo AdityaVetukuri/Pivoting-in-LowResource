@@ -17,8 +17,10 @@ en_data_file = open(en_data_path, "r")
 data_file = tr_data_file
 initial_offset = 300000 #skip the first number of lines
 data_out_size = 200000 #number of output lines
-num_of_batches = 5000 #number of batches
-batch_size = int(data_out_size/num_of_batches) #size of each batch
+batch_size =  40 #size of each batch
+assert data_out_size % batch_size == 0, "Batch size doesn't divide total data out cleanly"
+num_of_batches = int(data_out_size/batch_size) #number of batches
+
 print(f"\nNumber of Batches ={num_of_batches}\nBatch size ={batch_size}")
 
 #output files
@@ -26,7 +28,7 @@ tr_file_out_path = "./back-trans-open-sub.tr"
 tr_file_out = open(tr_file_out_path, "w")
 az_file_out_path =  "./back-trans-open-sub.az"
 az_file_out = open(az_file_out_path, "w")
-en_file_out_path = "./back_trans_open_sub.en"
+en_file_out_path = "./back-trans-open-sub.en"
 en_file_out = open(en_file_out_path, "w")
 
 #offset input files
