@@ -1,0 +1,140 @@
+model1 - 1500 examples
+tatoeba test set
+Avg Bleu1 Score: 0.32561262023688226 using 1000 examples
+Avg Bleu2 Score: 0.21335967656688729 using 955 examples
+Avg Bleu3 Score: 0.13028690797422374 using 875 examples
+Avg Bleu4 Score: 0.08240774973929353 using 703 examples
+
+back translated test set
+Avg Bleu1 Score: 0.20675777691249078 using 1000 examples
+Avg Bleu2 Score: 0.11101469904302803 using 913 examples
+Avg Bleu3 Score: 0.05941313467077939 using 788 examples
+Avg Bleu4 Score: 0.03291983070408467 using 628 examples
+
+
+model2 - 3000 examples
+tatoeba test set
+Avg Bleu1 Score: 0.316897195735096 using 1000 examples
+Avg Bleu2 Score: 0.20905654070499352 using 952 examples
+Avg Bleu3 Score: 0.13025818704984526 using 875 examples
+Avg Bleu4 Score: 0.07907125921434018 using 711 examples
+
+back translated test set
+Avg Bleu1 Score: 0.20001012492128242 using 1000 examples
+Avg Bleu2 Score: 0.10855140987050234 using 907 examples
+Avg Bleu3 Score: 0.05707651482923668 using 778 examples
+Avg Bleu4 Score: 0.03382738046194992 using 607 examples
+
+
+model3 - 4500 examples
+tatoeba test set
+Avg Bleu1 Score: 0.24688333425601552 using 1000 examples
+Avg Bleu2 Score: 0.15769412468888283 using 959 examples
+Avg Bleu3 Score: 0.1056484184583663 using 872 examples
+Avg Bleu4 Score: 0.0661766312321055 using 697 examples
+
+back translated test set
+Avg Bleu1 Score: 0.15439550647421757 using 1000 examples
+Avg Bleu2 Score: 0.07488449432067316 using 916 examples
+Avg Bleu3 Score: 0.04101686112988284 using 781 examples
+Avg Bleu4 Score: 0.02163494494295075 using 612 examples
+
+
+model4 - 6000 examples
+tatoeba test set
+Avg Bleu1 Score: 0.2787894320142924 using 1000 examples
+Avg Bleu2 Score: 0.17976328368823516 using 952 examples
+Avg Bleu3 Score: 0.12081137941511011 using 862 examples
+Avg Bleu4 Score: 0.07230092995513047 using 684 examples
+
+back translated test set
+Avg Bleu1 Score: 0.16691866712927586 using 1000 examples
+Avg Bleu2 Score: 0.0880233881666497 using 914 examples
+Avg Bleu3 Score: 0.04736569297716698 using 761 examples
+Avg Bleu4 Score: 0.02305342644322921 using 599 examples
+
+
+model5 - 7500 examples
+tatoeba test set
+Avg Bleu1 Score: 0.2877776637909152 using 1000 examples
+Avg Bleu2 Score: 0.18672629720380896 using 948 examples
+Avg Bleu3 Score: 0.12178872598662623 using 857 examples
+Avg Bleu4 Score: 0.07445248004322225 using 673 examples
+
+back translated test set
+Avg Bleu1 Score: 0.18218268621631906 using 1000 examples
+Avg Bleu2 Score: 0.09884995528815986 using 912 examples
+Avg Bleu3 Score: 0.057657010540804035 using 751 examples
+Avg Bleu4 Score: 0.03365641213443187 using 603 examples
+
+
+model6 - 9000 examples
+tatoeba test set
+Avg Bleu1 Score: 0.18409030201550614 using 1000 examples
+Avg Bleu2 Score: 0.10899674899476923 using 961 examples
+Avg Bleu3 Score: 0.07092397832584513 using 864 examples
+Avg Bleu4 Score: 0.039666635631961995 using 684 examples
+
+back translated test set
+Avg Bleu1 Score: 0.12404963082315962 using 1000 examples
+Avg Bleu2 Score: 0.05959360844146296 using 929 examples
+Avg Bleu3 Score: 0.029724526889607396 using 789 examples
+Avg Bleu4 Score: 0.01775063109500038 using 608 examples
+
+
+model7 - 10500 examples
+tatoeba test set
+Avg Bleu1 Score: 0.15339168562797156 using 1000 examples
+Avg Bleu2 Score: 0.09639421378423813 using 952 examples
+Avg Bleu3 Score: 0.0690554963217407 using 775 examples
+Avg Bleu4 Score: 0.039916289015059045 using 625 examples
+
+back translated test set
+Avg Bleu1 Score: 0.11787108631272762 using 1000 examples
+Avg Bleu2 Score: 0.05797249161320637 using 928 examples
+Avg Bleu3 Score: 0.03454516304633559 using 691 examples
+Avg Bleu4 Score: 0.02088345941342404 using 577 examples
+
+
+model8 - 12000 examples
+tatoeba test set
+Avg Bleu1 Score: 0.2765791692633508 using 1000 examples
+Avg Bleu2 Score: 0.18071133575604081 using 961 examples
+Avg Bleu3 Score: 0.1233163297364514 using 873 examples
+Avg Bleu4 Score: 0.07812453600775278 using 688 examples
+
+back translated test set
+Avg Bleu1 Score: 0.17340579195206626 using 1000 examples
+Avg Bleu2 Score: 0.08822250669315643 using 920 examples
+Avg Bleu3 Score: 0.047965547596696356 using 752 examples
+Avg Bleu4 Score: 0.030718053289754573 using 609 examples
+
+
+model9 - 13500 examples
+tatoeba test set
+Avg Bleu1 Score: 0.21354678214345807 using 1000 examples
+Avg Bleu2 Score: 0.13663156528727172 using 947 examples
+Avg Bleu3 Score: 0.08635632459349504 using 869 examples
+Avg Bleu4 Score: 0.04777873616682567 using 694 examples
+
+back translated test set
+Avg Bleu1 Score: 0.15188180667177387 using 1000 examples
+Avg Bleu2 Score: 0.07827786624447619 using 925 examples
+Avg Bleu3 Score: 0.0410639137420287 using 788 examples
+Avg Bleu4 Score: 0.02367233290628321 using 638 examples
+
+
+model10 - 15000 examples
+tatoeba test set
+Avg Bleu1 Score: 0.1099255438411132 using 1000 examples
+Avg Bleu2 Score: 0.056124751043054824 using 965 examples
+Avg Bleu3 Score: 0.03217135200399162 using 886 examples
+Avg Bleu4 Score: 0.015541303661414907 using 728 examples
+
+back translated test set
+Avg Bleu1 Score: 0.10412785548585166 using 1000 examples
+Avg Bleu2 Score: 0.048266511839658355 using 945 examples
+Avg Bleu3 Score: 0.02713758296634687 using 801 examples
+Avg Bleu4 Score: 0.0198932950856723 using 657 examples
+
+

@@ -9,14 +9,18 @@ from tqdm import tqdm
 src = 'az'
 trgt = 'en'
 az_en_mname = f'Helsinki-NLP/opus-mt-{src}-{trgt}'
-az_en_model = MarianMTModel.from_pretrained(az_en_mname).to('cuda')
 az_en_tokenizer = MarianTokenizer.from_pretrained(az_en_mname)
+#az_en_model = MarianMTModel.from_pretrained(az_en_mname).to('cuda')
+az_en_model = MarianMTModel.from_pretrained("./fine-tuned-model").to('cuda')
 #az_en_test_data_az_path="../data/az-en/az-en-tatoeba/Tatoeba.az-en.az"
 #az_en_test_data_en_path="../data/az-en/az-en-tatoeba/Tatoeba.az-en.en"
-az_en_test_data_az_path="./back-translate-data/back-trans-open-sub.az"
-az_en_test_data_en_path="./back-translate-data/back-trans-open-sub.en"
+#az_en_test_data_az_path="./back-translate-data/back-trans-open-sub.az"
+#az_en_test_data_en_path="./back-translate-data/back-trans-open-sub.en"
+az_en_test_data_az_path = "./fine-tune-data/test.source"
+az_en_test_data_en_path = "./fine-tune-data/test.target"
 az_en_test_az_lines = open(az_en_test_data_az_path, "r").readlines()
 az_en_test_en_lines = open(az_en_test_data_en_path, "r").readlines()
+
 
 #The tokenizer, model, and test corpus
 #Change this and uncomment the corresponding variables above to run different tests
@@ -26,8 +30,10 @@ src_text = az_en_test_az_lines
 trgt_text = az_en_test_en_lines
 
 #Batch size and number of batches
-batch_size = 100
-num_of_batches = 10
+num_of_test_examples = 1000
+batch_size = 50
+assert num_of_test_examples%batch_size == 0, "Number of test examples not cleanly divided by batch size"
+num_of_batches = int(num_of_test_examples/batch_size)
 
 #Storage lists for Bleu scores 1-4
 n1_scores = []
