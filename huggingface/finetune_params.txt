@@ -1,0 +1,205 @@
+optional arguments:
+  -h, --help            show this help message and exit
+  --model_name_or_path MODEL_NAME_OR_PATH
+                        Path to pretrained model or model identifier from
+                        huggingface.co/models
+  --config_name CONFIG_NAME
+                        Pretrained config name or path if not the same as
+                        model_name
+  --tokenizer_name TOKENIZER_NAME
+                        Pretrained tokenizer name or path if not the same as
+                        model_name
+  --cache_dir CACHE_DIR
+                        Where do you want to store the pretrained models
+                        downloaded from huggingface.co
+  --freeze_encoder      Whether tp freeze the encoder.
+  --freeze_embeds       Whether to freeze the embeddings.
+  --data_dir DATA_DIR   The input data dir. Should contain the .tsv files (or
+                        other data files) for the task.
+  --task TASK           Task name, summarization (or summarization_{dataset}
+                        for pegasus) or translation
+  --max_source_length MAX_SOURCE_LENGTH
+                        The maximum total input sequence length after
+                        tokenization. Sequences longer than this will be
+                        truncated, sequences shorter will be padded.
+  --max_target_length MAX_TARGET_LENGTH
+                        The maximum total sequence length for target text
+                        after tokenization. Sequences longer than this will be
+                        truncated, sequences shorter will be padded.
+  --val_max_target_length VAL_MAX_TARGET_LENGTH
+                        The maximum total sequence length for validation
+                        target text after tokenization. Sequences longer than
+                        this will be truncated, sequences shorter will be
+                        padded.
+  --test_max_target_length TEST_MAX_TARGET_LENGTH
+                        The maximum total sequence length for test target text
+                        after tokenization. Sequences longer than this will be
+                        truncated, sequences shorter will be padded.
+  --n_train N_TRAIN     # training examples. -1 means use all.
+  --n_val N_VAL         # validation examples. -1 means use all.
+  --n_test N_TEST       # test examples. -1 means use all.
+  --src_lang SRC_LANG   Source language id for translation.
+  --tgt_lang TGT_LANG   Target language id for translation.
+  --eval_beams EVAL_BEAMS
+                        # num_beams to use for evaluation.
+  --no_ignore_pad_token_for_loss
+                        If only pad tokens should be ignored. This assumes
+                        that `config.pad_token_id` is defined.
+  --output_dir OUTPUT_DIR
+                        The output directory where the model predictions and
+                        checkpoints will be written.
+  --overwrite_output_dir
+                        Overwrite the content of the output directory.Use this
+                        to continue training if output_dir points to a
+                        checkpoint directory.
+  --do_train            Whether to run training.
+  --do_eval             Whether to run eval on the dev set.
+  --do_predict          Whether to run predictions on the test set.
+  --model_parallel      If there are more than one devices, whether to use
+                        model parallelism to distribute the model's modules
+                        across devices.
+  --evaluation_strategy {EvaluationStrategy.NO,EvaluationStrategy.STEPS,EvaluationStrategy.EPOCH}
+                        Run evaluation during training at each logging step.
+  --prediction_loss_only
+                        When performing evaluation and predictions, only
+                        returns the loss.
+  --per_device_train_batch_size PER_DEVICE_TRAIN_BATCH_SIZE
+                        Batch size per GPU/TPU core/CPU for training.
+  --per_device_eval_batch_size PER_DEVICE_EVAL_BATCH_SIZE
+                        Batch size per GPU/TPU core/CPU for evaluation.
+  --per_gpu_train_batch_size PER_GPU_TRAIN_BATCH_SIZE
+                        Deprecated, the use of `--per_device_train_batch_size`
+                        is preferred. Batch size per GPU/TPU core/CPU for
+                        training.
+  --per_gpu_eval_batch_size PER_GPU_EVAL_BATCH_SIZE
+                        Deprecated, the use of `--per_device_eval_batch_size`
+                        is preferred.Batch size per GPU/TPU core/CPU for
+                        evaluation.
+  --gradient_accumulation_steps GRADIENT_ACCUMULATION_STEPS
+                        Number of updates steps to accumulate before
+                        performing a backward/update pass.
+  --eval_accumulation_steps EVAL_ACCUMULATION_STEPS
+                        Number of predictions steps to accumulate before
+                        moving the tensors to the CPU.
+  --learning_rate LEARNING_RATE
+                        The initial learning rate for Adam.
+  --weight_decay WEIGHT_DECAY
+                        Weight decay if we apply some.
+  --adam_beta1 ADAM_BETA1
+                        Beta1 for Adam optimizer
+  --adam_beta2 ADAM_BETA2
+                        Beta2 for Adam optimizer
+  --adam_epsilon ADAM_EPSILON
+                        Epsilon for Adam optimizer.
+  --max_grad_norm MAX_GRAD_NORM
+                        Max gradient norm.
+  --num_train_epochs NUM_TRAIN_EPOCHS
+                        Total number of training epochs to perform.
+  --max_steps MAX_STEPS
+                        If > 0: set total number of training steps to perform.
+                        Override num_train_epochs.
+  --warmup_steps WARMUP_STEPS
+                        Linear warmup over warmup_steps.
+  --logging_dir LOGGING_DIR
+                        Tensorboard log dir.
+  --logging_first_step  Log the first global_step
+  --logging_steps LOGGING_STEPS
+                        Log every X updates steps.
+  --save_steps SAVE_STEPS
+                        Save checkpoint every X updates steps.
+  --save_total_limit SAVE_TOTAL_LIMIT
+                        Limit the total amount of checkpoints.Deletes the
+                        older checkpoints in the output_dir. Default is
+                        unlimited checkpoints
+  --no_cuda             Do not use CUDA even when it is available
+  --seed SEED           random seed for initialization
+  --fp16                Whether to use 16-bit (mixed) precision (through
+                        NVIDIA apex) instead of 32-bit
+  --fp16_opt_level FP16_OPT_LEVEL
+                        For fp16: Apex AMP optimization level selected in
+                        ['O0', 'O1', 'O2', and 'O3'].See details at
+                        https://nvidia.github.io/apex/amp.html
+  --local_rank LOCAL_RANK
+                        For distributed training: local_rank
+  --tpu_num_cores TPU_NUM_CORES
+                        TPU: Number of TPU cores (automatically passed by
+                        launcher script)
+  --tpu_metrics_debug   Deprecated, the use of `--debug` is preferred. TPU:
+                        Whether to print debug metrics
+  --debug               Whether to print debug metrics on TPU
+  --dataloader_drop_last
+                        Drop the last incomplete batch if it is not divisible
+                        by the batch size.
+  --eval_steps EVAL_STEPS
+                        Run an evaluation every X steps.
+  --dataloader_num_workers DATALOADER_NUM_WORKERS
+                        Number of subprocesses to use for data loading
+                        (PyTorch only). 0 means that the data will be loaded
+                        in the main process.
+  --past_index PAST_INDEX
+                        If >=0, uses the corresponding part of the output as
+                        the past state for next step.
+  --run_name RUN_NAME   An optional descriptor for the run. Notably used for
+                        wandb logging.
+  --disable_tqdm DISABLE_TQDM
+                        Whether or not to disable the tqdm progress bars.
+  --no_remove_unused_columns
+                        Remove columns not required by the model when using an
+                        nlp.Dataset.
+  --label_names LABEL_NAMES [LABEL_NAMES ...]
+                        The list of keys in your dictionary of inputs that
+                        correspond to the labels.
+  --load_best_model_at_end
+                        Whether or not to load the best model found during
+                        training at the end of training.
+  --metric_for_best_model METRIC_FOR_BEST_MODEL
+                        The metric to use to compare two different models.
+  --greater_is_better GREATER_IS_BETTER
+                        Whether the `metric_for_best_model` should be
+                        maximized or not.
+  --ignore_data_skip    When resuming training, whether or not to skip the
+                        first epochs and batches to get to the same training
+                        data.
+  --label_smoothing LABEL_SMOOTHING
+                        The label smoothing epsilon to apply (if not zero).
+  --sortish_sampler     Whether to SortishSamler or not.
+  --predict_with_generate
+                        Whether to use generate to calculate generative
+                        metrics (ROUGE, BLEU).
+  --adafactor           whether to use adafactor
+  --encoder_layerdrop ENCODER_LAYERDROP
+                        Encoder layer dropout probability. Goes into
+                        model.config.
+  --decoder_layerdrop DECODER_LAYERDROP
+                        Decoder layer dropout probability. Goes into
+                        model.config.
+  --dropout DROPOUT     Dropout probability. Goes into model.config.
+  --attention_dropout ATTENTION_DROPOUT
+                        Attention dropout probability. Goes into model.config.
+  --lr_scheduler LR_SCHEDULER
+                        Which lr scheduler to use. Selected in ['constant',
+                        'constant_w_warmup', 'cosine', 'cosine_w_restarts',
+                        'linear', 'polynomial']
+
+
+python3 finetune_trainer.py \
+--do_train \
+--do_eval \
+--src_lang "az" \
+--tgt_lang "en" \
+--num_train_epochs 400 \
+--save_steps 18760 \
+--save_total_limit 10 \
+--warmup_steps 20 \
+--per_gpu_train_batch_size 32 \
+--per_gpu_eval_batch_size 32 \
+--n_train 15000 \
+--n_val 1000 \
+--data_dir "../../../cs695-Project/huggingface/fine-tune-data/" \
+--output_dir "../../../cs695-Project/huggingface/fine-tuned-model/" \
+--cache_dir "../../../cs695-Project/huggingface/cache/" \
+--max_source_length 128 \
+--max_target_length 128 \
+--val_max_target_length 128 \
+--test_max_target_length 128 \
+--model_name_or_path "Helsinki-NLP/opus-mt-az-en"
