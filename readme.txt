@@ -1,5 +1,3 @@
-This branch is for Matthew's fairseq tests
-
 This project is all about using Turkish as a pivot between Azerbaijani and English to improve quality of translation.
 
 The Preprocessed Datasets, Models and Outputs generated in this project can be found in the google repository linked below.
